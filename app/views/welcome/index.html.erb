@@ -1,4 +1,8 @@
 <h1>Welcome to the Home Expenses Tracker</h1>
 
-<%= link_to 'Log in', new_user_session_path %></br>
-<%= link_to 'Sign up', new_user_registration_path %>
+<% if current_user %>
+  <%= link_to 'Log out', destroy_user_session_path, method: :delete %></br>
+<% else %>
+  <%= link_to 'Log in', new_user_session_path %></br>
+  <%= link_to 'Sign up', new_user_registration_path %>
+<% end %>

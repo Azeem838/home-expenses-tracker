@@ -23,6 +23,7 @@ gem 'jbuilder', '~> 2.7'
 
 gem 'bulma-rails', '~> 0.9.0'
 gem 'devise'
+gem 'devise-bulma-views', '~> 0.1.0'
 gem 'rubocop', '~>0.81.0'
 
 # Use Active Storage variant

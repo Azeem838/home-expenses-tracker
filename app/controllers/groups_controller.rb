@@ -7,4 +7,6 @@ class GroupsController < ApplicationController
     @group = Group.find(params[:id])
     @expenses = @group.expenses
   end
+
+  def new; end
 end

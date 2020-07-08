@@ -1,3 +1,6 @@
 <h2><%= @group.name %></h2>
 
+<button class="button is-primary is-rounded"><%= link_to 'My Profile', user_path(current_user) %></button>
+<button class="button is-primary is-rounded"><%= link_to 'All Groups', all_groups_path %></button>
+
 <%= render 'expenses/expense' %>

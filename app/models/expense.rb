@@ -4,8 +4,6 @@ class Expense < ApplicationRecord
   has_many :groups, through: :expense_groups
   validates :name, presence: true
   validates :amount, presence: true
-
-  def self.external_expenses(user)
-    where.not(id: ExpenseGroup.where(expense_id: ids).pluck(:expense_id)).where(author_id: user.id)
-  end
+  scope :created_by, ->(user) { where(author_id: user.id) }
+  scope :ungrouped, -> { where.not(id: ExpenseGroup.where(expense_id: ids)) }
 end

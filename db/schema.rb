@@ -10,13 +10,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_08_074727) do
+ActiveRecord::Schema.define(version: 2020_07_08_091423) do
+
+  create_table "expense_groups", force: :cascade do |t|
+    t.integer "expense_id", null: false
+    t.integer "group_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["expense_id"], name: "index_expense_groups_on_expense_id"
+    t.index ["group_id"], name: "index_expense_groups_on_group_id"
+  end
 
   create_table "expenses", force: :cascade do |t|
     t.string "name"
     t.decimal "amount"
     t.integer "author_id", null: false
     t.index ["author_id"], name: "index_expenses_on_author_id"
+  end
+
+  create_table "groups", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "users", force: :cascade do |t|
@@ -32,5 +47,7 @@ ActiveRecord::Schema.define(version: 2020_07_08_074727) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "expense_groups", "expenses"
+  add_foreign_key "expense_groups", "groups"
   add_foreign_key "expenses", "users", column: "author_id"
 end

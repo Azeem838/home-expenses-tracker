@@ -6,7 +6,6 @@ class Expense < ApplicationRecord
   validates :amount, presence: true
 
   def self.external_expenses(user)
-    all = where.not(id: ExpenseGroup.where(expense_id: ids).pluck(:expense_id))
-    all.where(author_id: user.id)
+    where.not(id: ExpenseGroup.where(expense_id: ids).pluck(:expense_id)).where(author_id: user.id)
   end
 end

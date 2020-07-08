@@ -1,0 +1,13 @@
+<h2 class="title is-2">Welcome <%= current_user.username %> </h2>
+
+<div class="buttons are-medium are-rounded">
+  <button class="button is-primary is-rounded"><%= link_to 'All my Expenses', all_expenses_path %></button>
+  <button class="button is-success is-rounded"><%= link_to 'All my External Expenses', all_external_expenses_path %></button>
+  <button class="button is-warning is-rounded"><%= link_to 'All Groups' %></button>
+</div>
+
+
+
+<h3 class="title is-3">Last 5 Expenses:</h3>
+
+<%= render 'expenses/expense' %>

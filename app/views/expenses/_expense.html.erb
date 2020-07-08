@@ -1,0 +1,14 @@
+<div class="tile is-ancestor">
+  <div class="tile is-vertical is-4">
+    <div class="tile">
+      <div class="tile is-parent is-vertical">
+      <% @expenses.each do |expense| %>
+        <article class="tile is-child notification is-primary">
+          <p class="title has-text-weight-bold">Name: <%= expense.name %></p>
+          <p class="subtitle"><em>Amount: </em><%= expense.amount %></p>
+        </article>
+      <% end %>
+      </div>
+    </div>
+  </div>
+</div>

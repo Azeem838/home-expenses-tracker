@@ -10,8 +10,24 @@
 <button class="button is-primary is-rounded"><%= link_to 'All Groups', all_groups_path %></button>
 <button class="button is-primary is-rounded"><%= link_to 'Create new expense', new_expense_path %></button>
 
+<div class="tile is-ancestor">
+  <div class="tile is-vertical is-4">
+    <div class="tile">
+      <div class="tile is-parent is-vertical">
+      <% @expenses.each do |expense| %>
+        <article class="tile is-child notification is-primary">
+          <p class="title has-text-weight-bold">Name: <%= expense.name %></p>
+          <p class="subtitle"><em>Amount: </em><%= expense.amount %></p>
+          <button class="button is-primary is-small is-rounded"><%= link_to 'Edit', edit_expense_path(expense) %></button>
+          <button class="button is-warning is-small is-rounded"><%= link_to 'Remove', expense_group_path(expense: expense.id, group: @group.id), method: :delete, data: { confirm: "Are you sure?" } %></button>
+          <button class="button is-danger is-small is-rounded"><%= link_to 'Delete', expense_path(expense), method: :delete, data: { confirm: "Are you sure?" } %></button>
+        </article>
+      <% end %>
+      </div>
+    </div>
+  </div>
+</div>
 
-<%= render 'expenses/expense' %>
 
 <h3>Try adding some of these ungrouped expenses:</h3>
 
@@ -19,11 +35,11 @@
   <div class="tile is-vertical is-4">
     <div class="tile">
       <div class="tile is-parent is-vertical">
-        <% @ungrouped.each do |e| %>
+        <% @ungrouped.each do |expense| %>
           <article class="tile is-child notification is-primary">
-            <p class="title has-text-weight-bold">Name: <%= e.name %></p>
-            <p class="subtitle"><em>Amount: </em><%= e.amount %></p>
-            <button class="button is-primary is-small is-rounded"><%= link_to 'Add', expense_groups_path(expense: e.id, group: @group.id), method: :post %></button>
+            <p class="title has-text-weight-bold">Name: <%= expense.name %></p>
+            <p class="subtitle"><em>Amount: </em><%= expense.amount %></p>
+            <button class="button is-primary is-small is-rounded"><%= link_to 'Add', expense_groups_path(expense: expense.id, group: @group.id), method: :post %></button>
           </article>
         <% end %>
       </div>

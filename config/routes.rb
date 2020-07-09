@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   get 'all_groups', to: 'groups#index'
   resources :groups, except: [:index]
   resources :expenses, except: [:show, :index]
-  resources :expense_groups, only: [:create]
+  resources :expense_groups, only: [:create, :destroy]
   
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

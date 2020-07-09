@@ -4,6 +4,7 @@ class Expense < ApplicationRecord
   has_many :groups, through: :expense_groups
   validates :name, presence: true
   validates :amount, presence: true
+  validates :author_id, presence: true
   scope :created_by, ->(user) { where(author_id: user.id) }
   scope :ungrouped, -> { where.not(id: ExpenseGroup.where(expense_id: ids).pluck(:expense_id)) }
 end

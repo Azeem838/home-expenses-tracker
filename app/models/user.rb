@@ -5,4 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :expenses, class_name: 'Expense', foreign_key: 'author_id', dependent: :destroy
   has_many :groups, dependent: :destroy
+  validates :username, presense: true
+  validates :email, presense: true
+  validates :password, presense: true
 end

@@ -4,5 +4,5 @@ class Group < ApplicationRecord
   has_many :user_groups
   belongs_to :user
 
-  validates :name, uniqueness: { case_sensitive: false }
+  validates :name, uniqueness: { case_sensitive: false }, presence: true
 end

@@ -4,7 +4,7 @@ class ExpensesController < ApplicationController
   end
 
   def all_external_expenses
-    @expenses = Expense.ungrouped.created_by(current_user)
+    @expenses = Expense.ungrouped.created_by(current_user).reverse
   end
 
   def new

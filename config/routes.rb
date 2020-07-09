@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   get 'all_external_expenses', to: 'expenses#all_external_expenses'
   get 'all_groups', to: 'groups#index'
   resources :groups, only: [:show, :new, :create, :edit, :update]
-  resources :expenses, only: [:new, :create]
+  resources :expenses, only: [:new, :create, :edit, :update]
   
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

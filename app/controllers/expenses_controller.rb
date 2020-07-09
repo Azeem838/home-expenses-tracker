@@ -22,6 +22,21 @@ class ExpensesController < ApplicationController
     end
   end
 
+  def edit
+    @expense = Expense.find(params[:id])
+    @groups = current_user.groups
+  end
+
+  def update
+    @expense = Expense.find(params[:id])
+    if @expense.update(expense_params)
+      flash[:notice] = 'Expense was successfully updated'
+      redirect_to all_expenses_path
+    else
+      render 'edit'
+    end
+  end
+
   private
 
   def expense_params

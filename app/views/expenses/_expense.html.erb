@@ -6,6 +6,7 @@
         <article class="tile is-child notification is-primary">
           <p class="title has-text-weight-bold">Name: <%= expense.name %></p>
           <p class="subtitle"><em>Amount: </em><%= expense.amount %></p>
+          <button class="button is-primary is-rounded"><%= link_to 'Edit', edit_expense_path(expense) %></button>
         </article>
       <% end %>
       </div>

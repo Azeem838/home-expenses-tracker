@@ -5,7 +5,8 @@ class GroupsController < ApplicationController
 
   def show
     @group = Group.find(params[:id])
-    @expenses = @group.expenses
+    @expenses = @group.expenses.reverse
+    @ungrouped = Expense.ungrouped.created_by(current_user).last(5).reverse
   end
 
   def new

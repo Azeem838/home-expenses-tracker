@@ -22,6 +22,20 @@ class GroupsController < ApplicationController
     end
   end
 
+  def edit
+    @group = Group.find(params[:id])
+  end
+
+  def update
+    @group = Group.find(params[:id])
+    if @group.update(group_params)
+      flash[:notice] = 'Group was successfully updated'
+      redirect_to @group
+    else
+      render 'edit'
+    end
+  end
+
   private
 
   def group_params

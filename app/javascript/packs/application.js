@@ -17,6 +17,7 @@ require("channels");
 require("jquery");
 global.toastr = require("toastr");
 import "../stylesheets/application";
+import "@fortawesome/fontawesome-free/js/all";
 
 $(document).ready(function () {
   // Check for click events on the navbar burger icon

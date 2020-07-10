@@ -1,34 +1,58 @@
-<h2>Sign up</h2>
+<section class="hero is-success is-fullheight">
+    <div class="hero-body">
+        <div class="container has-text-centered">
+            <div class="column is-4 is-offset-4">
+                <h3 class="title has-text-black">Sign up</h3>
+                <hr class="login-hr">
+                <p class="subtitle has-text-black">Please sign up to proceed.</p>
+                <div class="box">
+                    <figure class="avatar">
+                        <img src="https://placehold.it/128x128">
+                    </figure>                    
+                    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %> 
+                      <%= render "devise/shared/error_messages", resource: resource %>  
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
+                      <div class="field">
+                          <div class="control">
+                            <%= f.label :username %><br />
+                            <%= f.text_field :username, autofocus: true, autocomplete: "username", class: "input is-large", placeholder: "Choose a Username"  %>
+                          </div>
+                      </div>
 
-  <div class="field">
-    <%= f.label :username %><br />
-    <%= f.text_field :username, autofocus: true, autocomplete: "username" %>
-  </div>
+                      <div class="field">
+                          <div class="control">
+                            <%= f.label :email %><br />
+                            <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "input is-large", placeholder: "Enter your Email" %>
+                          </div>
+                      </div>
+                      <div class="control">
+                        <div class="field">
+                          <%= f.label :password %>
+                          <% if @minimum_password_length %>
+                          <em>(<%= @minimum_password_length %> characters minimum)</em>
+                          <% end %><br />
+                          <%= f.password_field :password, autocomplete: "new-password", class: "input is-large", placeholder: "Enter a Password", type: "password" %>
+                        </div>
+                      </div>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
+                      <div class="control">
+                        <div class="field">
+                          <%= f.label :password_confirmation %><br />
+                          <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "input is-large", placeholder: "Re-Enter your Password", type: "password" %>
+                        </div>
+                      </div>                 
 
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+                      <div class="actions">
+                        <%= button_tag( class: "button is-block is-info is-large is-fullwidth") do %>
+                            Sign up <i class='fas fa-sign-in-alt'></i>    
+                        <% end %>
+                      </div>
+                    <% end %>
+                </div>
+                <p class="has-text-grey">
+                  <%= render "devise/shared/links" %>
+                </p>
+            </div>
+        </div>
+    </div>
+</section>

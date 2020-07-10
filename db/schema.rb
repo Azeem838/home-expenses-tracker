@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_08_104406) do
+ActiveRecord::Schema.define(version: 2020_07_10_065132) do
 
   create_table "expense_groups", force: :cascade do |t|
     t.integer "expense_id", null: false
@@ -25,6 +25,8 @@ ActiveRecord::Schema.define(version: 2020_07_08_104406) do
     t.string "name"
     t.decimal "amount"
     t.integer "author_id", null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
     t.index ["author_id"], name: "index_expenses_on_author_id"
   end
 

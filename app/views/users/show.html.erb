@@ -1,7 +1,5 @@
 <h2 class="title is-2">Welcome <%= current_user.username %> </h2>
 
-<p><%= @total %>  </p>
+<h3 class="title is-3">Summary</h3>
 
-<h3 class="title is-3">Last 5 Expenses:</h3>
-
-<%= render 'expenses/expense' %>
+<%= render 'summary' %>

@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   def show
-    @expenses = current_user.expenses.order(created_at: :desc).limit(5)
-    @total = Expense.sum_expenses(@expenses)
+    @grand_total = current_user.expenses.sum(:amount)
+    @groups = current_user.groups
   end
 end

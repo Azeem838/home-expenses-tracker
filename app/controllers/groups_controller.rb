@@ -1,11 +1,13 @@
 class GroupsController < ApplicationController
   def index
     @groups = current_user.groups
+    expenses = Expense.grouped.created_by(current_user)
+    @total = Expense.sum_expenses(expenses)
   end
 
   def show
     @group = Group.find(params[:id])
-    @expenses = @group.expenses.order(created_at: :desc)
+    @grouped = @group.expenses.order(created_at: :desc)
     @total = Group.total(@group)
     @ungrouped = Expense.ungrouped.created_by(current_user).last(5).reverse
   end

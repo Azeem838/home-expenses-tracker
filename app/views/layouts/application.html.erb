@@ -11,12 +11,12 @@
   </head>
 
   <body>
-    <%= render 'layouts/navigation' %>
+    <%= render 'navigation' %>
     <section class="section">
       <div class="content">
         <p class="notice"><%= notice %></p>
         <p class="alert"><%= alert %></p>
-        <%= yield %>
+        <div class="container is-light"><%= yield %></div>
         <%= toastr_flash %>
       </div>
     </section>

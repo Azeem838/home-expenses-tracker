@@ -1,5 +1,7 @@
 <h1>Your Groups</h1>
 
-<button class="button is-primary is-rounded"><%= link_to 'New Group', new_group_path %></button>
+<button class="button is-primary is-rounded mb-5"><%= link_to 'New Group', new_group_path, class: "has-text-white" %></button>
+
+<%= render 'shared/total' %>
 
 <%= render 'group' %>

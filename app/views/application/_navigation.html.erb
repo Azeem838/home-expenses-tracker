@@ -1,0 +1,54 @@
+<div class="hero-head">
+  <nav class="navbar is-info" role="navigation" aria-label="main navigation">
+    <div class="container">
+      <div class="navbar-brand">
+        <%= link_to "<img src='https://versions.bulma.io/0.7.0/images/bulma-logo.png' alt='Bulma: a modern CSS framework based on Flexbox' width='112' height='28'>".html_safe, 
+            root_path, class: "navbar-item" %>
+    
+        <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
+    
+      <div id="navbarBasicExample" class="navbar-menu">
+        <div class="navbar-start">
+          <% if current_user %>
+            
+          <%= link_to "#{current_user.username}", user_path(current_user), class: "navbar-item" %>
+    
+          <%= link_to 'New expense', new_expense_path, class: "navbar-item" %>
+          
+          <%= link_to 'Groups', all_groups_path, class: "navbar-item" %>
+    
+          <div class="navbar-item has-dropdown is-hoverable">
+            <%= link_to 'Expenses', all_expenses_path, class: "navbar-link" %>
+    
+            <div class="navbar-dropdown">
+              <%= link_to 'All Expenses', all_expenses_path, class: "navbar-item" %>
+              <%= link_to 'All External Expenses', all_external_expenses_path, class: "navbar-item" %>
+            </div>
+          </div>
+    
+          <%= link_to "Edit Profile", edit_user_registration_path, class: "navbar-item" %>
+    
+          <% end %>
+        </div>
+    
+        <div class="navbar-end">
+          <div class="navbar-item">
+            <div class="buttons">
+              <% if !current_user %>
+                <%= link_to "<strong>Sign up</strong>".html_safe, new_user_registration_path, class: "button is-primary" %>
+                <%= link_to "Log in", new_user_session_path, class: "button is-light" %>
+              <% else %>
+                <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "button is-light" %>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+</div>

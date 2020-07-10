@@ -1,23 +1,20 @@
-<div class="columns">
-  <div class="column is-2">
-    <% @groups.each do |group| %>
-      <div class="card">
-        <div class="card-image">
-          <figure class="image">
-            <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
-          </figure>
-        </div>
-        <div class="card-content">
-          <div class="media">
-            <div class="media-content">
-              <p class="title"><%= link_to group.name, group_path(group) %></p>
-            </div>
-          </div>
-          <div class="content">      
-            <time datetime="2016-1-1">Created <%= time_ago_in_words(group.created_at)%> ago</time>
-          </div>
-        </div>
+<% @groups.each do |group| %>
+  <article class="media">
+    <figure class="media-left">
+      <p class="image is-64x64">
+        <img src="https://bulma.io/images/placeholders/128x128.png">
+      </p>
+    </figure>
+    <div class="media-content">
+      <div class="content">
+          <p>
+          <%= link_to group.name, group_path(group) %> <br>
+          <time datetime="2016-1-1">Created <%= time_ago_in_words(group.created_at)%> ago</time>
+          </p>
       </div>
-    <% end %>
-  </div>
-</div>
+    </div>
+    <div class="media-right">
+    Total: <%= Group.total(group) %>
+    </div>
+  </article>
+<% end %>

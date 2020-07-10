@@ -43,6 +43,7 @@ class ExpensesController < ApplicationController
   def destroy
     @expense = Expense.find(params[:id])
     @expense.destroy
+    flash[:alert] = 'Expense deleted'
     redirect_to all_expenses_path
   end
 

@@ -15,6 +15,8 @@ require("channels");
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
 require("jquery");
+global.toastr = require("toastr");
+import "../stylesheets/application";
 
 $(document).ready(function () {
   // Check for click events on the navbar burger icon

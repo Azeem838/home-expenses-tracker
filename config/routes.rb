@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
+  get '/user' => "users#show", :as => :user_root
   root "welcome#index"
   resources :users, only: [:show] 
   get 'all_expenses', to: 'expenses#all_expenses'

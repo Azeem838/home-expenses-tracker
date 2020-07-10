@@ -13,33 +13,25 @@
   <div id="navbarBasicExample" class="navbar-menu">
     <div class="navbar-start">
       <% if current_user %>
-        <%= link_to "Home", user_path(current_user), class: "navbar-item" %>
-      <% end %>
-      <a class="navbar-item">
-        Documentation
-      </a>
+        
+      <%= link_to "#{current_user.username}", user_path(current_user), class: "navbar-item" %>
+
+      <%= link_to 'New expense', new_expense_path, class: "navbar-item" %>
+      
+      <%= link_to 'Groups', all_groups_path, class: "navbar-item" %>
 
       <div class="navbar-item has-dropdown is-hoverable">
-        <a class="navbar-link">
-          More
-        </a>
+        <%= link_to 'Expenses', all_expenses_path, class: "navbar-link" %>
 
         <div class="navbar-dropdown">
-          <a class="navbar-item">
-            About
-          </a>
-          <a class="navbar-item">
-            Jobs
-          </a>
-          <a class="navbar-item">
-            Contact
-          </a>
-          <hr class="navbar-divider">
-          <a class="navbar-item">
-            Report an issue
-          </a>
+          <%= link_to 'All Expenses', all_expenses_path, class: "navbar-item" %>
+          <%= link_to 'All External Expenses', all_external_expenses_path, class: "navbar-item" %>
         </div>
       </div>
+
+      <%= link_to "Edit Profile", edit_user_registration_path, class: "navbar-item" %>
+
+      <% end %>
     </div>
 
     <div class="navbar-end">

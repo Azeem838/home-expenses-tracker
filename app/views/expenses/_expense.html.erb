@@ -1,23 +1,24 @@
 <div class="columns is-multiline">
   <% obj.each do |expense| %>
-    <div class="column is-3">
-      <article class="tile is-child notification is-light">
-        <p class="title has-text-weight-bold">Name: <%= expense.name %></p>
-        <p class="subtitle"><em>Amount: </em><%= expense.amount %></p>
-        <% if obj == @expenses %>
-          <button class="button is-primary is-small is-rounded"><%= link_to 'Edit', edit_expense_path(expense) %></button>
-          <button class="button is-danger is-small is-rounded"><%= link_to 'Delete', expense_path(expense), method: :delete, data: { confirm: "Are you sure?" } %></button>
-        <% end %>
-        <% if obj == @grouped  %>
-          <button class="button is-primary is-small is-rounded"><%= link_to 'Edit', edit_expense_path(expense) %></button>
-          <button class="button is-warning is-small is-rounded"><%= link_to 'Remove', expense_group_path(expense: expense.id, group: @group.id), method: :delete, data: { confirm: "Are you sure?" } %></button>
-          <button class="button is-danger is-small is-rounded"><%= link_to 'Delete', expense_path(expense), method: :delete, data: { confirm: "Are you sure?" } %></button>
-        <% end %>
-        <% if obj == @ungrouped %>
-          <button class="button is-primary is-small is-rounded"><%= link_to 'Add', expense_groups_path(expense: expense.id, group: @group.id), method: :post %></button>
-        <% end %>
+    <div class="column is-one-quarter">
+      <article class="media">
+        <figure class="media-left">
+          <p class="image is-48x48">
+            <%= expense_image(expense.id, class: "is-rounded") %>
+          </p>
+        </figure>
+        <div class="media-content">
+          <div class="content">
+            <p>
+              <%= expense.name%> <br>
+              <time datetime="2016-1-1">Created <%= time_ago_in_words(expense.created_at)%> ago</time>
+            </p>
+          </div>
+        </div>
+        <div class="media-right">
+          <p class="subtitle"><%= expense.amount %></p>
+        </div>
       </article>
     </div>
   <% end %>
 </div>
-

@@ -4,7 +4,11 @@
       <div class="navbar-brand">
         <%= link_to root_path, class: "navbar-item" do %>
           <%= image_tag("logo.png", alt: "HomeExpensesTracker", class: "logo-img") %>
-        <% end %> 
+        <% end %>
+
+        <% if user_signed_in? %>
+          <%= link_to "#{current_user.username}", user_path(current_user), class: "navbar-item" %>
+        <% end %>
     
         <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navMenu">
           <span aria-hidden="true"></span>
@@ -16,9 +20,7 @@
       <div id="navMenu" class="navbar-menu">
         <div class="navbar-start">
           <% if current_user %>
-            
-          <%= link_to "#{current_user.username}", user_path(current_user), class: "navbar-item" %>
-    
+                
           <%= link_to 'New expense', new_expense_path, class: "navbar-item" %>
           
           <%= link_to 'Groups', all_groups_path, class: "navbar-item" %>

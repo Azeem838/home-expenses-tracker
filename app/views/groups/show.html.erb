@@ -1,15 +1,21 @@
-<div>
-  <h2><%= @group.name %></h2>
-  <div class="buttons">
-    <button class="button is-primary is-rounded"><%= link_to 'Edit Group', edit_group_path(@group), class: "has-text-white" %></button>
-    <button class="button is-danger is-rounded"><%= link_to 'Delete Group', group_path(@group), method: :delete, class: "has-text-white",
-                                                    data: { confirm: "Deleting this group will not delete the expenses in this group. Delete?" } %></button>
-    </div class="buttons">
-  <%= render 'shared/total' %>
+<div class="is-flex mb-2 group-head-container">
+  <div>
+    <h2><%= @group.name %></h2>
+  
+    <div class="buttons">
+      <button class="button is-primary is-rounded"><%= link_to 'Edit Group', edit_group_path(@group), class: "has-text-white" %></button>
+      <button class="button is-danger is-rounded"><%= link_to 'Delete Group', group_path(@group), method: :delete, class: "has-text-white",
+                                                      data: { confirm: "Deleting this group will not delete the expenses in this group. Delete?" } %></button>
+      </div>
+      
+  
+  </div>
+  <figure class="expense-logo is-pulled-right mt-0 mx-0 group-show-logo">
+    <%= group_image(@group.id) %>
+  </figure>
 </div>
 
-
-
+<%= render 'shared/total' %>
 
 <%= render 'shared/add_new_link'%>
 

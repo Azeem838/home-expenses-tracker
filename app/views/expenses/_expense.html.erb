@@ -1,6 +1,6 @@
 <div class="columns is-multiline">
   <% obj.each do |expense| %>
-    <div class="column is-one-quarter">
+    <div class="column is-one-quarter expense-column">
       <div class="box mt-0">
         <article class="media">
           <figure class="media-left ml-0 mr-4 mb-0 expense-logo">
@@ -9,8 +9,9 @@
           <div class="media-content">
             <div class="content">
               <p>
-                <%= expense.name%> <br>
+                <%= link_to expense.name, expense_path(expense) %> <br>
                 <time datetime="2016-1-1" class="has-text-weight-light is-italic">Created <%= time_ago_in_words(expense.created_at)%> ago</time>
+                <button class="button is-small is-block"><%= show_buttons(obj, expense) %></button>
               </p>
             </div>
           </div>

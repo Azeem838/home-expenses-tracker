@@ -1,0 +1,25 @@
+<div class="box mt-0">
+  <article class="media">
+    <figure class="media-left ml-0 mr-4 mb-0 expense-logo">
+        <%= expense_image(@expense.id) %>
+    </figure>
+    <div class="media-content">
+      <div class="content">
+        <p class="is-size-5	has-text-success">
+          <%= @expense.name %>
+          <% @groups.each do |group| %>
+            <span class="is-block has-text-black">Group(s): <%= link_to group.name, group_path(group), class: "is-success" %> </span>
+          <% end %>
+        </p>
+        <div class="buttons">
+          <button class="button is-primary is-small is-rounded"><%= link_to 'Edit', edit_expense_path(@expense), class: "has-text-white" %></button>
+          <button class="button is-danger is-small is-rounded"><%= link_to 'Delete', expense_path(@expense), method: :delete, data: { confirm: "Are you sure?" }, class: "has-text-white"  %></button>
+        </div>
+          <time datetime="2016-1-1" class="has-text-weight-light is-italic">Created <%= time_ago_in_words(@expense.created_at)%> ago</time>        
+      </div>
+    </div>
+    <div class="media-right">
+      <p class="subtitle"><%= @expense.amount %></p>
+    </div>    
+  </article>
+</div>

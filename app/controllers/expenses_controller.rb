@@ -11,6 +11,11 @@ class ExpensesController < ApplicationController
     @total = Expense.sum_expenses(@expenses)
   end
 
+  def show
+    @expense = Expense.find(params[:id])
+    @groups = @expense.groups
+  end
+
   def new
     @expense = Expense.new
   end

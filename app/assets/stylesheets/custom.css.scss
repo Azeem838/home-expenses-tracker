@@ -5,6 +5,7 @@ body {
   font-family: "Questrial", sans-serif;
   font-size: 14px;
   font-weight: 300;
+  background-color: #f1f3f2;
 }
 
 .hero.is-success {
@@ -90,4 +91,9 @@ p.subtitle {
     font-size: 1.2rem;
     color: white;
   }
+}
+
+.total {
+  font-size: 1.2rem;
+  border-radius: 0 !important;
 }

@@ -10,7 +10,7 @@
           <%= link_to "#{current_user.username}", user_path(current_user), class: "navbar-item" %>
         <% end %>
     
-        <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navMenu">
+        <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navMenu" onclick="toggleBurger()">
           <span aria-hidden="true"></span>
           <span aria-hidden="true"></span>
           <span aria-hidden="true"></span>
@@ -55,3 +55,13 @@
     </div>
   </nav>
 </div>
+
+<script>
+function toggleBurger() {
+  var burger = $(".burger");
+  var menu = $(".navbar-menu");
+  burger.toggleClass("is-active");
+  menu.toggleClass("is-active");
+}
+
+</script>

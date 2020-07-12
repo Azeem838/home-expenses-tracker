@@ -1,0 +1,17 @@
+<% if alert %>
+  <article class="message is-danger">
+    <div class="message-body">
+      <%= alert %>
+      <button class="delete" aria-label="delete"></button>
+    </div>
+  </article>
+<% end %>
+
+<% if notice %>
+  <article class="message is-success">
+    <div class="message-body">
+      <%= notice %>
+      <button class="delete" aria-label="delete"></button>
+    </div>
+  </article>
+<% end %>

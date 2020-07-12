@@ -17,7 +17,7 @@ class ExpensesController < ApplicationController
 
   def create
     @expense = current_user.expenses.build(expense_params)
-    if @expense.save!
+    if @expense.save
       flash[:notice] = 'Expense was created successfully'
       redirect_to all_expenses_path
     else

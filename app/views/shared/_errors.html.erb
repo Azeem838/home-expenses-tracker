@@ -1,0 +1,15 @@
+<% if obj.errors.any? %>
+  <article class="message is-danger">
+    <div class="message-header">
+      <p class="mb-0">The following errors prevented the <%= obj.class.name.downcase %> from being saved</p>
+      <button class="delete" aria-label="delete"></button>
+    </div>
+    <div class="message-body">
+        <ul class="mt-0">
+          <% obj.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+        </ul>
+    </div>
+  </article>
+<% end %>

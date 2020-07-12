@@ -15,8 +15,7 @@
     <%= render 'navigation' %>
     <section class="section">
       <div class="content">
-        <p class="notice"><%= notice %></p>
-        <p class="alert"><%= alert %></p>
+       <%= render 'layouts/messages' %>
         <div class="container is-light"><%= yield %></div>
         <%= toastr_flash %>
       </div>

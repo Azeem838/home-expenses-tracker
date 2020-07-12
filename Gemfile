@@ -26,6 +26,7 @@ gem 'devise'
 gem 'devise-bulma-views', '~> 0.1.0'
 gem 'rubocop', '~>0.81.0'
 gem 'toastr-rails'
+gem 'sendgrid-ruby'
 
 # Use Active Storage variant
 gem 'image_processing', '~> 1.2'

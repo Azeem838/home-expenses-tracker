@@ -8,14 +8,14 @@
   <tfoot>
     <tr>
       <th><abbr title="Position"><%= link_to "Total Expenses", all_expenses_path %></abbr></th>
-      <th><%= @grand_total %></th>
+      <th><%= number_to_currency(@grand_total) %></th>
     </tr>
   </tfoot>
   <tbody>  
     <% @groups.each do |g| %>
     <tr>
       <th><%= link_to g.name, group_path(g) %> </th>
-      <td><%= Group.total(g) %></strong>
+      <td><%= number_to_currency(Group.total(g)) %></strong>
     </tr>
     <% end %>
   </tbody>

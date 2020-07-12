@@ -15,7 +15,7 @@
             </div>
           </div>
           <div class="media-right">
-            <p class="subtitle">Total: <%= Group.total(group) %></p>
+            <p class="subtitle"><%= number_to_currency(Group.total(group)) %></p>
           </div>
         </article>
       </div>

@@ -15,7 +15,7 @@ require("channels");
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
 require("jquery");
-require("packs/custom");
+//= require("packs/custom")
 global.toastr = require("toastr");
 import "../stylesheets/application";
 import "@fortawesome/fontawesome-free/js/all";

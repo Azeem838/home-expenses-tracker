@@ -2,7 +2,7 @@ module ImageHelper
   def group_image(group_id, options = {})
     group = Group.find(group_id)
     if group.main_image.attached?
-      image_tag(group.main_image, options)
+      image_tag(group.main_image.variant(resize_to_limit: [150, nil]), options)
     else
       image_tag('default_group_image.png')
     end

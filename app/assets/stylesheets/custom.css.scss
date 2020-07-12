@@ -75,3 +75,19 @@ p.subtitle {
 .expense-logo {
   width: 20%;
 }
+
+.add-new {
+  display: flex;
+  justify-content: center;
+  height: 5em;
+  background-color: #5fb523 !important;
+
+  .add-new-link {
+    align-self: center;
+    border: 1px solid white;
+    border-radius: 4px;
+    padding: 0.6rem 7rem;
+    font-size: 1.2rem;
+    color: white;
+  }
+}

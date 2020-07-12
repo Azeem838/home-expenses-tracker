@@ -8,9 +8,9 @@
   <button class="button is-primary is-rounded"><%= link_to 'Edit Group', edit_group_path(@group) %></button>
   <button class="button is-danger is-rounded"><%= link_to 'Delete Group', group_path(@group), method: :delete,
                                                   data: { confirm: "Deleting this group will not delete the expenses in this group. Delete?" } %></button>
-  <button class="button is-primary is-rounded"><%= link_to 'Create new expense', new_expense_path %></button>
 </div class="buttons">
 
+<%= render 'shared/add_new_link'%>
 
 <%= render 'expenses/expense', obj: @grouped %>
 

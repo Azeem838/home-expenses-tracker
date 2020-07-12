@@ -1,3 +1,6 @@
+$primary: #3778c2;
+$success: #5fb523;
+
 @import "bulma";
 
 html,
@@ -96,4 +99,21 @@ p.subtitle {
 .total {
   font-size: 1.2rem;
   border-radius: 0 !important;
+}
+
+table {
+  background-color: $success !important;
+  color: white !important;
+
+  > * {
+    color: white;
+  }
+
+  a {
+    color: white;
+  }
+
+  th {
+    color: white !important;
+  }
 }

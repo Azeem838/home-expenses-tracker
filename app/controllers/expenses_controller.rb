@@ -1,5 +1,6 @@
 class ExpensesController < ApplicationController
   before_action :set_groups, only: %i[new edit]
+  before_action :set_expense, only: %i[edit update destroy show]
 
   def all_expenses
     @expenses = current_user.expenses.order(created_at: :desc)
@@ -12,7 +13,6 @@ class ExpensesController < ApplicationController
   end
 
   def show
-    @expense = Expense.find(params[:id])
     @groups = @expense.groups
   end
 
@@ -31,12 +31,9 @@ class ExpensesController < ApplicationController
     end
   end
 
-  def edit
-    @expense = Expense.find(params[:id])
-  end
+  def edit; end
 
   def update
-    @expense = Expense.find(params[:id])
     if @expense.update(expense_params)
       flash[:notice] = 'Expense was successfully updated'
       redirect_to all_expenses_path
@@ -46,7 +43,6 @@ class ExpensesController < ApplicationController
   end
 
   def destroy
-    @expense = Expense.find(params[:id])
     @expense.destroy
     flash[:alert] = 'Expense deleted'
     redirect_to all_expenses_path
@@ -60,5 +56,9 @@ class ExpensesController < ApplicationController
 
   def set_groups
     @groups = current_user.groups
+  end
+
+  def set_expense
+    @expense = Expense.find(params[:id])
   end
 end

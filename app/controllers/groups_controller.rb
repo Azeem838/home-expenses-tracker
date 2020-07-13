@@ -1,4 +1,5 @@
 class GroupsController < ApplicationController
+  before_action :set_group, only: %i[show edit update destroy]
   def index
     @groups = current_user.groups
     expenses = Expense.grouped.created_by(current_user)
@@ -6,7 +7,6 @@ class GroupsController < ApplicationController
   end
 
   def show
-    @group = Group.find(params[:id])
     @grouped = @group.expenses.order(created_at: :desc)
     @total = Group.total(@group)
     @ungrouped = Expense.ungrouped.created_by(current_user).last(5).reverse
@@ -26,12 +26,9 @@ class GroupsController < ApplicationController
     end
   end
 
-  def edit
-    @group = Group.find(params[:id])
-  end
+  def edit; end
 
   def update
-    @group = Group.find(params[:id])
     if @group.update(group_params)
       flash[:notice] = 'Group was successfully updated'
       redirect_to @group
@@ -41,7 +38,6 @@ class GroupsController < ApplicationController
   end
 
   def destroy
-    @group = Group.find(params[:id])
     @group.destroy
     redirect_to all_groups_path
   end
@@ -50,5 +46,9 @@ class GroupsController < ApplicationController
 
   def group_params
     params.require(:group).permit(:name, :main_image)
+  end
+
+  def set_group
+    @group = Group.find(params[:id])
   end
 end

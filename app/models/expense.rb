@@ -2,8 +2,9 @@ class Expense < ApplicationRecord
   belongs_to :author, class_name: 'User'
   has_many :expense_groups, dependent: :destroy
   has_many :groups, through: :expense_groups, dependent: :destroy
+
   validates :name, presence: true
-  validates :amount, presence: true, numericality: {only_float: true}
+  validates :amount, presence: true, numericality: { only_float: true }
   validates :author_id, presence: true
 
   scope :created_by, ->(user) { where(author_id: user.id) }

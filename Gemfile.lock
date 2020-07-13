@@ -64,6 +64,9 @@ GEM
     bootsnap (1.4.6)
       msgpack (~> 1.0)
     builder (3.2.4)
+    bullet (6.1.0)
+      activesupport (>= 3.0.0)
+      uniform_notifier (~> 1.11)
     bulma-rails (0.9.0)
       sassc (~> 2.0)
     byebug (11.1.3)
@@ -279,6 +282,7 @@ GEM
     tzinfo (1.2.7)
       thread_safe (~> 0.1)
     unicode-display_width (1.7.0)
+    uniform_notifier (1.13.0)
     warden (1.2.8)
       rack (>= 2.0.6)
     web-console (4.0.3)
@@ -306,6 +310,7 @@ PLATFORMS
 
 DEPENDENCIES
   bootsnap (>= 1.4.2)
+  bullet
   bulma-rails (~> 0.9.0)
   byebug
   capybara
@@ -334,6 +339,7 @@ DEPENDENCIES
   toastr-rails
   turbolinks (~> 5)
   tzinfo-data
+  uniform_notifier
   web-console (>= 3.3.0)
   webdrivers
   webpacker (~> 4.0)

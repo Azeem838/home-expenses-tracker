@@ -8,6 +8,7 @@ class Group < ApplicationRecord
   validate :acceptable_image
 
   scope :total, ->(g) { g.expenses.sum(:amount) }
+  scope :order_alpha, -> { order('LOWER(name)') }
 
   def acceptable_image
     return unless main_image.attached?

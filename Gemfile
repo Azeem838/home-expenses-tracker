@@ -25,8 +25,8 @@ gem 'bulma-rails', '~> 0.9.0'
 gem 'devise'
 gem 'devise-bulma-views', '~> 0.1.0'
 gem 'rubocop', '~>0.81.0'
-gem 'toastr-rails'
 gem 'sendgrid-ruby'
+gem 'toastr-rails'
 
 # Use Active Storage variant
 gem 'image_processing', '~> 1.2'
@@ -38,6 +38,9 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
   # Use sqlite3 as the database for Active Record
+  gem 'factory_bot_rails'
+  gem 'rails-controller-testing'
+  gem 'rspec-rails'
   gem 'sqlite3', '~> 1.4'
 end
 
@@ -52,9 +55,13 @@ end
 
 group :test do
   # Adds support for Capybara system testing and selenium driver
-  gem 'capybara', '>= 2.15'
+  gem 'capybara'
   gem 'selenium-webdriver'
   # Easy installation and use of web drivers to run system tests with browsers
+  gem 'faker'
+  gem 'guard-rspec'
+  gem 'launchy'
+  gem 'shoulda-matchers'
   gem 'webdrivers'
 end
 

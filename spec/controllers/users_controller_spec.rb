@@ -4,7 +4,7 @@ RSpec.describe UsersController, type: :controller do
   before { sign_in FactoryBot.create(:user) }
 
   describe 'GET #show' do
-    it 'Renders user show page' do
+    it 'Renders users show page' do
       get :show
       expect(response).to be_successful
       expect(response).to render_template(:show)

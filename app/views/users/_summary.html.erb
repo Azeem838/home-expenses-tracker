@@ -7,7 +7,7 @@
   </thead>
   <tfoot>
     <tr>
-      <th><abbr title="Position"><%= link_to "Total Expenses", all_expenses_path %></abbr></th>
+      <th><abbr title="Position"><%= link_to "All Expenses", all_expenses_path %></abbr></th>
       <th><%= number_to_currency(@grand_total) %></th>
     </tr>
   </tfoot>
@@ -18,5 +18,9 @@
       <td><%= number_to_currency(Group.total(g)) %></strong>
     </tr>
     <% end %>
+    <tr>
+      <th><%= link_to"External Expenses", all_external_expenses_path %></th>
+      <td><%= number_to_currency(@total)  %></td>
+    </tr>
   </tbody>
 </table>

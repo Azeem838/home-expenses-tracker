@@ -11,7 +11,7 @@
               <p>
                 <%= link_to expense.name, expense_path(expense) %> <br>
                 <time datetime="2016-1-1" class="has-text-weight-light is-italic">Created <%= time_ago_in_words(expense.created_at)%> ago</time>
-                <button class="button is-small is-block"><%= show_buttons(obj, expense) %></button>
+                <%= show_buttons(obj, expense) %> 
               </p>
             </div>
           </div>

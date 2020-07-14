@@ -2,7 +2,10 @@
 
 > Track and group your expenses for better management of your finances.
 
-![screenshot](./app_screenshot.png)
+![screenshot](app/assets/images/home-page.jpeg)
+![screenshot](app/assets/images/group-page.jpeg)
+![screenshot](app/assets/images/home-page.jpeg)
+![screenshot](app/assets/images/your-groups.jpeg)
 
 Created with Ruby on Rails.
 

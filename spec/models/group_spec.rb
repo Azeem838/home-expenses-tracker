@@ -2,6 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Group, type: :model do
   before { FactoryBot.build(:group) }
+  before { FactoryBot.create(:user) }
 
   describe 'validations' do
     it 'should be invalid' do

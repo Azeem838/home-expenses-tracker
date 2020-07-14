@@ -9,7 +9,7 @@
           <div class="media-content">
             <div class="content">
               <p>
-                <%= link_to group.name, group_path(group) %> <br>
+                <%= link_to group.name.humanize, group_path(group) %> <br>
                 <time datetime="2016-1-1" class="has-text-weight-light is-italic">Created <%= time_ago_in_words(group.created_at)%> ago</time>
               </p>
             </div>

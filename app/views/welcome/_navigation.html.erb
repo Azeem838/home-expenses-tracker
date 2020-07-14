@@ -68,7 +68,7 @@
       <% if user_signed_in? %>
         <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "button is-light" %>
       <% else %>
-        <%= link_to "<strong>Sign up now!</strong>".html_safe, new_user_registration_path, class: "button is-primary is-large" %> <br>
+        <%= link_to "<strong>Sign up now!</strong>".html_safe, new_user_registration_path, class: "button is-success is-large" %> <br>
         <p class="tag or">OR</p> <br>
         <%= link_to "Log in", new_user_session_path, class: "button is-primary is-large" %>
       <% end %>

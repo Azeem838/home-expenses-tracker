@@ -21,7 +21,8 @@ Created with Ruby on Rails.
 
 ## Live Demo
 
-[Live Demo Link](https://home-expenses-tracker.herokuapp.com/)
+- [Live Demo Link](https://home-expenses-tracker.herokuapp.com/)
+- [Presentation](https://www.loom.com/share/8170fe09c9d0472c9d38c8313f0b31ec)
 
 ## Getting Started
 

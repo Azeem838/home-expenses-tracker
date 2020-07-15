@@ -42,8 +42,9 @@ To get a local copy up and running follow these simple example steps.
 
 1. Run <code>bundle install</code>
 2. Install yarn packages as the terminal will prompt you to do
-3. Run <code>rails db:migrate</code>
-4. Run <code>Rails s<code> to start the server
+3. Run <code>rails db:create</code>
+4. Run <code>rails db:migrate</code>
+5. Run <code>Rails s</code> to start the server
 
 ### Usage
 

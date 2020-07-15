@@ -13,14 +13,14 @@
  *= require_self
  */
 
-@import "variables.scss";
+@import "custom/variables.scss";
 @import "bulma";
-@import "shared.scss";
-@import "navigation.scss";
-@import "hero.scss";
-@import "expense.scss";
-@import "group.scss";
-@import "summary.scss";
+@import "custom/shared.scss";
+@import "custom/navigation.scss";
+@import "custom/hero.scss";
+@import "custom/expense.scss";
+@import "custom/group.scss";
+@import "custom/summary.scss";
 
 $fa-font-path: "@fortawesome/fontawesome-free/webfonts";
 

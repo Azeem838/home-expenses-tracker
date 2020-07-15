@@ -11,9 +11,10 @@
  * It is generally better to create a new file per style scope.
  *
  *= require toastr
- *= require_tree .
  *= require_self
  */
+@import "custom.css.scss";
+
 $fa-font-path: "@fortawesome/fontawesome-free/webfonts";
 
 @import "@fortawesome/fontawesome-free/scss/fontawesome";

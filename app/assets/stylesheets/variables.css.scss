@@ -1,0 +1,9 @@
+$primary: #3778c2;
+$success: #5fb523;
+$table-row-hover-background-color: $primary;
+
+@font-face {
+  font-family: "proximanova-light";
+  src: url("/app/assets/fonts/proximanova-light.otf");
+}
+$proxima-light: "proximanova-light";

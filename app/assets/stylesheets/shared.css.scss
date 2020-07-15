@@ -1,0 +1,36 @@
+html,
+body {
+  font-family: $proxima-light;
+  font-size: 16px;
+  font-weight: 300;
+  background-color: #f1f3f2;
+}
+
+.total {
+  font-size: 1.2rem;
+  border-radius: 0 !important;
+}
+
+input {
+  font-weight: 300;
+}
+
+p {
+  font-weight: 700;
+}
+
+p.subtitle {
+  padding-top: 1rem;
+}
+
+.has-text-black {
+  color: black;
+}
+
+.field {
+  padding-bottom: 10px;
+}
+
+.fa {
+  margin-left: 5px;
+}

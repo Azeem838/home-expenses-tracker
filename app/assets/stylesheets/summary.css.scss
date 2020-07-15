@@ -1,0 +1,16 @@
+table {
+  background-color: $success !important;
+  color: white !important;
+
+  > * {
+    color: white;
+  }
+
+  a {
+    color: white;
+  }
+
+  th {
+    color: white !important;
+  }
+}

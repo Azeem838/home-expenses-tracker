@@ -4,7 +4,7 @@ class Group < ApplicationRecord
   belongs_to :user
   has_one_attached :main_image
 
-  validates :name, uniqueness: { case_sensitive: false }, presence: true
+  validates :name, uniqueness: { scope: :user_id }, presence: true
   validate :acceptable_image
 
   scope :total, ->(g) { g.expenses.sum(:amount) }

@@ -12,13 +12,15 @@
 
   <body>
     <%= render 'navigation' %>
-    <section class="section">
-      <div class="content mt-5">
-       <%= render 'layouts/messages' %>
-        <div class="container"><%= yield %></div>
-        <%= toastr_flash %>
-      </div>
-    </section>
+    <% unless params[:controller] == 'welcome' %>
+      <section class="section">
+        <div class="content mt-5">
+        <%= render 'layouts/messages' %>
+          <div class="container"><%= yield %></div>
+          <%= toastr_flash %>
+        </div>
+      </section>
+    <% end %>
   </body>
   <%= javascript_pack_tag 'file_name', 'data-turbolinks-track': 'reload' %>
   <%= javascript_pack_tag 'delete_button', 'data-turbolinks-track': 'reload' %>

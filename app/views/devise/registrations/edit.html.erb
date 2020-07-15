@@ -4,6 +4,16 @@
   <%= render "devise/shared/error_messages", resource: resource %>
 
   <div class="field">
+    <%= f.label :current_password, class: "label" %> <i>(we need your current password to confirm any changes made to your profile)</i><br />
+    <div class="control has-icons-left has-icons-right">
+      <%= f.password_field :current_password, autocomplete: "current-password", class: "input" %>
+      <span class="icon is-small is-left">
+        <i class="fas fa-key"></i>
+      </span>
+    </div>
+  </div>
+
+  <div class="field">
       <%= f.label :username, class: "label" %><br />
     <div class="control has-icons-left has-icons-right">
       <%= f.text_field :username, autofocus: true, autocomplete: "username", class: "input", type: "text" %>
@@ -42,7 +52,7 @@
   </div>
 
   <div class="field">
-    <%= f.label :password_confirmation, class: "label" %><br />
+    <%= f.label :password_confirmation, class: "label" %><i>(leave blank if you are not changing your password)</i><br />
     <div class="control has-icons-left has-icons-right">
       <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "input" %>
       <span class="icon is-small is-left">
@@ -50,17 +60,6 @@
       </span>
     </div>
   </div>
-
-  <div class="field">
-    <%= f.label :current_password, class: "label" %> <i>(we need your current password to confirm your changes)</i><br />
-    <div class="control has-icons-left has-icons-right">
-      <%= f.password_field :current_password, autocomplete: "current-password", class: "input" %>
-      <span class="icon is-small is-left">
-        <i class="fas fa-key"></i>
-      </span>
-    </div>
-  </div>
-
 
   <div class="field is-grouped">
     <div class="control">

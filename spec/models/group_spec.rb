@@ -24,7 +24,7 @@ RSpec.describe Group, type: :model do
       @group = create(:group)
     end
 
-    it 'is valid with image greater than 1mb' do
+    it 'is valid with image less than 1mb' do
       @group.main_image.attach(
         io: File.open(Rails.root.join('spec', 'fixtures', 'less-than-1mb.jpg')),
         filename: 'greater-than-1mb.jpg',

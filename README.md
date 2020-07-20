@@ -1,6 +1,6 @@
 # Home Expenses Tracker - Ruby on Rails Capstone Project
 
-> Track and group your expenses for better management of your finances. Built for the final Ruby on Rails Capstone project.
+> Track and group your expenses for better management of your finances. Built for the final Ruby on Rails Capstone project. Made for mobile.
 
 [<img width="300" height="700" src="app/assets/images/home-page.jpeg">](home-page.jpeg)
 [<img align="right" width="300" height="700" src="app/assets/images/group-page.jpeg">](group-page.jpeg)

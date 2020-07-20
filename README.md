@@ -2,11 +2,11 @@
 
 > Track and group your expenses for better management of your finances. Built for the final Ruby on Rails Capstone project. Made for mobile.
 
-[<img width="300" height="700" src="app/assets/images/home-page.jpeg">](home-page.jpeg)
-[<img align="right" width="300" height="700" src="app/assets/images/group-page.jpeg">](group-page.jpeg)
+[<img width="300" height="700" src="app/assets/images/home-page-cropped.jpeg">](home-page-cropped.jpeg)
+[<img align="right" width="300" height="700" src="app/assets/images/group-page-cropped.jpeg">](group-page-cropped.jpeg)
 </br>
-[<img width="300" height="700" src="app/assets/images/new-expense.jpeg">](new-expense.jpeg)
-[<img align="right" width="300" height="700" src="app/assets/images/your-groups.jpeg">](your-groups.jpeg)
+[<img width="300" height="700" src="app/assets/images/new-expense-cropped.jpeg">](new-expense-cropped.jpeg)
+[<img align="right" width="300" height="700" src="app/assets/images/your-groups-cropped.jpeg">](your-groups-cropped.jpeg)
 
 Created with Ruby on Rails.
 

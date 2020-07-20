@@ -2,9 +2,10 @@
 
 > Track and group your expenses for better management of your finances. Built for the final Ruby on Rails Capstone project.
 
-[<img align="left" width="300" height="700" src="app/assets/images/home-page.jpeg">](home-page.jpeg)
+[<img width="300" height="700" src="app/assets/images/home-page.jpeg">](home-page.jpeg)
 [<img align="right" width="300" height="700" src="app/assets/images/group-page.jpeg">](group-page.jpeg)
-[<img align="left" width="300" height="700" src="app/assets/images/new-expense.jpeg">](new-expense.jpeg)
+</br>
+[<img width="300" height="700" src="app/assets/images/new-expense.jpeg">](new-expense.jpeg)
 [<img align="right" width="300" height="700" src="app/assets/images/your-groups.jpeg">](your-groups.jpeg)
 
 Created with Ruby on Rails.
